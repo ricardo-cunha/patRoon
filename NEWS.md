@@ -1,9 +1,21 @@
 # DEVEL
 
+* Fixed: The `removeTPIsomers` filter for `transformationProductsStructure` didn't actually apply the `removeDuplicates` filter.
+
+
+# patRoon 2.3.2
+
 * Fixed: `as.data.table()` method for `featureGroups`: `normConcToTox` argument was ignored (not for `featureGroupsScreening`)
 * Various reporting fixes for screening results from suspect lists without formula/SMILES data.
 * `generateAnalysisInfo()`: try to equalize the output and input directory order
 * Added get and plot methods for total ion chromatograms (TICs) and base peak chromatograms (BPCs) for the analysisInfo `data.frame`, `features` and `featureGroups` class as: `getTICs()`, `getBPCs()`, `plotTICs()` and `plotBPCs()`.
+* Updated PubChem transformations to 0.1.9
+* Fix: reporting compounds consensus with library algorithm would fail (issue #110)
+* SIRIUS formula annotations: calculate `ion_formula_mz` column instead of taking it from SIRIUS data, as it rarely may not be available (issue #111)
+* Fix: improve handling SIRIUS results for features with non-standard adduct assignments (issue #111)
+* Store individual plots in `MS2QuantMeta` slots
+* force rJava GC to improve stability with MS2Quant predictions
+
 
 # patRoon 2.3.1
 
